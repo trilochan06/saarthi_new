@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 174 55% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 40 85% 55%;
+    --accent-foreground: 220 20% 15%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 174 55% 42%;
+
+    --radius: 0.75rem;
+
+    /* Therapy palette */
+    --therapy-teal: 174 55% 42%;
+    --therapy-teal-light: 174 45% 92%;
+    --therapy-coral: 15 80% 65%;
+    --therapy-coral-light: 15 70% 95%;
+    --therapy-amber: 40 85% 55%;
+    --therapy-amber-light: 40 75% 94%;
+    --therapy-sage: 150 25% 50%;
+    --therapy-sage-light: 150 25% 94%;
+    --therapy-lavender: 270 35% 60%;
+    --therapy-lavender-light: 270 35% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 55% 42%) 0%, hsl(174 45% 55%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(25 80% 60%) 0%, hsl(40 85% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(30 25% 97%) 0%, hsl(174 45% 96%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(220 20% 20% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(220 20% 20% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(220 20% 20% / 0.15);
+    --shadow-glow: 0 0 32px hsl(174 55% 42% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 30 15% 95%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 30 15% 95%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 30 15% 95%;
+
+    --primary: 174 50% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 25 70% 55%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 30 10% 60%;
+
+    --accent: 40 75% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 174 50% 50%;
+
+    --therapy-teal: 174 50% 50%;
+    --therapy-teal-light: 174 40% 20%;
+    --therapy-coral: 15 70% 55%;
+    --therapy-coral-light: 15 60% 18%;
+    --therapy-amber: 40 75% 50%;
+    --therapy-amber-light: 40 65% 18%;
+    --therapy-sage: 150 25% 45%;
+    --therapy-sage-light: 150 20% 18%;
+    --therapy-lavender: 270 30% 55%;
+    --therapy-lavender-light: 270 25% 18%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(174 50% 50%) 0%, hsl(174 40% 40%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(25 70% 55%) 0%, hsl(40 75% 50%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 10%) 0%, hsl(220 18% 12%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(220 18% 14%) 0%, hsl(220 16% 12%) 100%);
+
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 16px 48px -12px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 32px hsl(174 50% 50% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .therapy-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .therapy-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .therapy-shadow {
+    box-shadow: var(--shadow-md);
+  }
+
+  .therapy-shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .therapy-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

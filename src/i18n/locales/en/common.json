@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "TherapyCanvas",
+    "tagline": "Interactive Therapy Authoring Platform"
+  },
+  "common": {
+    "loading": "Loading…",
+    "logout": "Logout",
+    "cancel": "Cancel",
+    "save": "Save",
+    "change": "Change",
+    "back": "Back",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "unknown": "Unknown"
+  },
+  "language": {
+    "english": "English",
+    "tamil": "Tamil",
+    "hindi": "Hindi"
+  },
+  "login": {
+    "title": "Therapist Login",
+    "subtitle": "Sign in to manage your learners and activities",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login as Therapist",
+    "signingIn": "Signing in…",
+    "demoHint": "Use any email/password (demo).",
+    "or": "OR",
+    "selectLearner": "Select a learner to view their assigned activities"
+  },
+  "dashboard": {
+    "title": "Therapist Dashboard",
+    "learners": "My Learners",
+    "activities": "My Activities",
+    "progress": "Learner Progress",
+    "datasets": "Live Datasets",
+    "createActivity": "Create New Activity",
+    "addLearner": "Add New Learner",
+    "childName": "Child Name",
+    "age": "Age",
+    "language": "Preferred Language",
+    "noLearners": "No learners yet. Add your first learner!",
+    "noActivities": "No activities yet",
+    "createFirstActivity": "Create Your First Activity",
+    "datasetError": "Backend not reachable / datasets failed to load.",
+    "noDatasets": "No datasets configured in backend."
+  },
+  "toast": {
+    "learnerAdded": "Learner added"
+  },
+  "voice": {
+    "start": "Start voice",
+    "stop": "Stop",
+    "speak": "Speak",
+    "stopSpeaking": "Stop speaking"
+  },
+  "ai": {
+    "suggest": "AI Suggest",
+    "generating": "Generating…",
+    "suggestionsTitle": "Suggestions"
+  },
+  "activity": {
+    "pageTitle": "Activity Authoring",
+    "pageSubtitle": "Create and edit therapy activities with voice + AI support",
+    "formTitle": "Activity Details",
+    "title": "Title",
+    "titlePlaceholder": "Enter activity title",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter description",
+    "save": "Save",
+    "saved": "Activity saved"
+  },
+  "activityTypes": {
+    "aac": {
+      "name": "AAC Board",
+      "desc": "Create a grid of images and labels for communication"
+    },
+    "matching": {
+      "name": "Matching",
+      "desc": "Create matching activities with options"
+    },
+    "visual-schedule": {
+      "name": "Visual Schedule",
+      "desc": "Create step-by-step schedules with images"
+    },
+    "speech": {
+      "name": "Speech Prompt Activity",
+      "desc": "Create prompts for speech practice"
+    }
+  },
+  "createSelect": {
+    "title": "Create Activity",
+    "subtitle": "Choose an activity type to start",
+    "open": "Open"
+  },
+  "preview": {
+    "exit": "Exit Preview",
+    "notFound": "Activity not found",
+    "listen": "Listen",
+    "tapToSpeak": "Tap to speak"
+  },
+  "child": {
+    "notFound": "Learner not found",
+    "welcome": "Welcome, {{name}}",
+    "subtitle": "Your assigned activities",
+    "tapToOpen": "Tap to open",
+    "noActivities": "No activities assigned yet.",
+    "activityMissing": "Activity not found",
+    "followInstruction": "Follow the instruction",
+    "markDone": "Mark as Done",
+    "completed": "Completed"
+  },
+  "review": {
+    "title": "Review Submission",
+    "notFound": "Review not available",
+    "saved": "Review saved",
+    "rating": "Rating",
+    "notes": "Notes",
+    "notesPlaceholder": "Write notes for the learner..."
+  },
+  "notFound": {
+    "title": "Oops! Page not found",
+    "backHome": "Return to Home"
+  }
+  ,
+  "audio": { "test": "Test Audio" }
+
+}
