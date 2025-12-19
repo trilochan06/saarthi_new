@@ -1,0 +1,8 @@
+{
+  "core": ["I", "you", "want", "more", "help", "stop", "go", "yes", "no", "again", "all done", "where", "what", "why", "please", "thank you"],
+  "indian_food": ["idli", "dosa", "sambar", "rice", "curd", "chapati", "dal", "biryani", "chai", "milk", "water"],
+  "places": ["home", "school", "temple", "hospital", "toilet", "bus", "park", "shop"],
+  "people": ["amma", "appa", "didi", "bhaiya", "teacher", "friend", "grandma", "grandpa"],
+  "feelings": ["happy", "sad", "angry", "tired", "scared", "hurt", "sleepy"],
+  "actions": ["eat", "drink", "sit", "stand", "come", "wait", "look", "listen", "play"]
+}

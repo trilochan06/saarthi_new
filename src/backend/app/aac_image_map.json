@@ -1,0 +1,21 @@
+{
+  "chapati": ["roti", "bread", "flatbread"],
+  "dosa": ["dosa", "crepe", "pancake"],
+  "curd": ["yogurt", "curd"],
+  "milk": ["milk"],
+  "please": ["please", "polite"],
+  "thank you": ["thank you", "thanks"],
+  "help": ["help", "assist"],
+  "eat": ["eat", "food"],
+  "drink": ["drink", "water"],
+  "sleepy": ["sleep", "tired"],
+  "angry": ["angry", "mad"],
+  "happy": ["happy", "smile"],
+  "stand": ["stand"],
+  "sit": ["sit"],
+  "where": ["where", "question"],
+  "listen": ["listen", "hear"],
+  "more": ["more", "again"],
+  "no": ["no", "stop"],
+  "you": ["you", "person"]
+}

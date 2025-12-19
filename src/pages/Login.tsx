@@ -12,7 +12,8 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import SpeakButton from "@/components/voice/SpeakButton";
+import SpeakButton from "@/components/SpeakButton";
+
 
 export default function Login() {
   const { t } = useTranslation();

@@ -124,6 +124,10 @@
     "title": "அப்பா! இந்தப் பக்கம் கிடைக்கவில்லை",
     "backHome": "முகப்புக்கு திரும்பவும்"
   },
-  "audio": { "test": "ஆடியோ சோதனை" }
+  "audio": { "test": "ஆடியோ சோதனை" },
+  "voice.tapToSpeak": "Tap to speak",
+"voice.speaking": "Speaking…",
+"voice.listen": "Listen"
+
 
 }

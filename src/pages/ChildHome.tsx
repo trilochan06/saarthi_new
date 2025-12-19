@@ -1,109 +1,75 @@
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
-import { Button } from "@/components/ui/button";
-import { useTherapyStore } from "@/stores/therapyStore";
-import { LogOut, Star } from "lucide-react";
-
-const activityTypeIcons: Record<string, string> = {
-  aac: "🗣️",
-  matching: "🧩",
-  "visual-schedule": "📋",
-  speech: "🎤",
-};
-
-const activityColors: Record<string, string> = {
-  aac: "bg-therapy-teal-light border-therapy-teal",
-  matching: "bg-therapy-coral-light border-therapy-coral",
-  "visual-schedule": "bg-therapy-amber-light border-therapy-amber",
-  speech: "bg-therapy-lavender-light border-therapy-lavender",
-};
-
-const ChildHome = () => {
+export default function ChildHome() {
   const navigate = useNavigate();
-  const { t } = useTranslation();
-  const { logout, currentChildId, learners, assignments, activities } =
-    useTherapyStore();
 
-  const learner = learners.find((l) => l.id === currentChildId);
-
-  if (!learner) {
-    return (
-      <div className="min-h-screen bg-therapy-coral-light flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-xl text-foreground mb-4">{t("child.notFound")}</p>
-          <Button variant="child" onClick={() => navigate("/login")}>
-            {t("common.back")}
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  const myAssignments = assignments.filter((a) => a.learnerId === learner.id);
+  const options = useMemo(
+    () => [
+      {
+        title: "AAC Board",
+        desc: "Open communication board / AAC preview activity",
+        emoji: "🧩",
+        onClick: () => navigate("/preview/activity-1"),
+      },
+      {
+        title: "Color Matching",
+        desc: "Interactive color game (opens only when you click here)",
+        emoji: "🎨",
+        onClick: () => navigate("/color-matching"),
+      },
+      {
+        title: "Board Game",
+        desc: "Go to board game page",
+        emoji: "🎲",
+        onClick: () => navigate("/board-game"),
+      },
+      {
+        title: "Activity Preview",
+        desc: "Preview another activity example",
+        emoji: "👀",
+        onClick: () => navigate("/preview/activity-2"),
+      },
+    ],
+    [navigate]
+  );
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--gradient-hero)" }}>
-      <header className="p-4">
-        <div className="container mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-foreground">
-              {t("child.welcome", { name: learner.name })}
-            </h1>
-            <p className="text-sm text-muted-foreground">
-              {t("child.subtitle")}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" onClick={() => logout()}>
-              <LogOut className="w-5 h-5" />
-            </Button>
-          </div>
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-5xl px-4 py-8">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-2xl font-bold">Child Home</h1>
+          <p className="text-muted-foreground">
+            Choose an activity to start.
+          </p>
         </div>
-      </header>
 
-      <main className="container mx-auto px-6 pb-10">
-        <div className="grid md:grid-cols-2 gap-4">
-          {myAssignments.map((as) => {
-            const activity = activities.find((a) => a.id === as.activityId);
-            if (!activity) return null;
-
-            return (
-              <div
-                key={as.id}
-                className={`rounded-2xl border-2 p-5 therapy-shadow cursor-pointer hover:scale-[1.01] transition-transform ${
-                  activityColors[activity.type] || "bg-card border-border"
-                }`}
-                onClick={() => navigate(`/child/activity/${activity.id}`)}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="text-4xl">
-                    {activityTypeIcons[activity.type] || "⭐"}
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {options.map((o) => (
+            <button
+              key={o.title}
+              onClick={o.onClick}
+              className="rounded-2xl border bg-card p-5 text-left shadow-sm transition hover:shadow-md"
+            >
+              <div className="flex items-start gap-3">
+                <div className="text-3xl">{o.emoji}</div>
+                <div>
+                  <div className="text-lg font-semibold">{o.title}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">
+                    {o.desc}
                   </div>
-                  <Star className="w-5 h-5 text-primary" />
                 </div>
-
-                <h3 className="mt-3 text-lg font-bold text-foreground">
-                  {activity.name}
-                </h3>
-
-                <p className="text-sm text-muted-foreground mt-1">
-                  {t("child.tapToOpen")}
-                </p>
               </div>
-            );
-          })}
-
-          {myAssignments.length === 0 && (
-            <div className="bg-card rounded-2xl p-8 text-center therapy-shadow">
-              <p className="text-muted-foreground">{t("child.noActivities")}</p>
-            </div>
-          )}
+            </button>
+          ))}
         </div>
-      </main>
+
+        <div className="mt-8 rounded-2xl border bg-card p-4 text-sm text-muted-foreground">
+          Tip: Color Matching should open only via the “Color Matching” card.
+          If it goes to <code className="px-1">/preview/...</code>, your button
+          routing is wrong.
+        </div>
+      </div>
     </div>
   );
-};
-
-export default ChildHome;
+}
